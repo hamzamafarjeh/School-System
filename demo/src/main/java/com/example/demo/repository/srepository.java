@@ -1,8 +1,8 @@
 package com.example.demo.repository;
 
-import com.example.demo.model.Student;
+import com.example.demo.model.students;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface StudentRepository extends JpaRepository<Student, Integer> {
+public interface sRepository extends JpaRepository<students, Integer> {
         }
 
