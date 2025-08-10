@@ -1,7 +1,7 @@
-package com.example.school.service;
+package com.example.demo.service;
 
-import com.example.school.model.Student;
-import com.example.school.repository.StudentRepository;
+import com.example.demo.model.students;
+import com.example.demo.repository.srepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,13 +9,13 @@ import java.util.List;
 @Service
 public class StudentService {
 
-    private final StudentRepository repository;
+    private final srepository repository;
 
-    public StudentService(StudentRepository repository) {
+    public StudentService(srepository repository) {
         this.repository = repository;
     }
 
-    public List<Student> getAllStudents() {
+    public List<students> getAllStudents() {
         return repository.findAll();
     }
 }
