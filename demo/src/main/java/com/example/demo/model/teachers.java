@@ -1,9 +1,8 @@
 package com.example.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class teachers {
@@ -14,6 +13,9 @@ public class teachers {
     private String name;
     private int age;
     private String email;
+
+    @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL)
+    private List<students> students;
 
 
     public teachers() {}

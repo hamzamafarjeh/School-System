@@ -12,6 +12,10 @@ public class students {
     private int age;
     private String email;
 
+    @ManyToOne
+    @JoinColumn(name = "teacher_id")   // foreign key
+    private teachers teacher;
+
 
     public students() {}
 
