@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.ClassDTO;
 import com.example.demo.model.ClassEntity;
 import com.example.demo.repository.ClassRepository;
 import org.springframework.web.bind.annotation.*;
@@ -24,14 +25,10 @@ public class ClassController {
         return classRepository.save(classEntity);
     }
 
-    // جلب جميع الـ Classes مع عدد الطلاب
+
     @GetMapping
-    public List<String> getAllClassesWithStudentCount() {
-        List<ClassEntity> classes = classRepository.findAll();
-        return classes.stream()
-                .map(c -> "Class: " + c.getSubjectName() + " | Grade: " + c.getGrade() +
-                        " | Teacher: " + (c.getTeacher() != null ? c.getTeacher().getName() : "No teacher") +
-                        " | Students count: " + (c.getStudents() != null ? c.getStudents().size() : 0))
-                .collect(Collectors.toList());
+    public List<ClassDTO> getAllClassesWithStudentCount() {
+        return classRepository.findAllClassesWithStudentCount();
+
     }
 }
