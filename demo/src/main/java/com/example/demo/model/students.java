@@ -12,6 +12,9 @@ public class students {
     private int age;
     private String email;
 
+    private String fatherName;
+    private String fatherEmail;
+
     @ManyToOne
     @JoinColumn(name = "teacher_id")   // foreign key
     private teachers teacher;
@@ -53,5 +56,13 @@ public class students {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getFatherEmail() {
+        return fatherEmail;
+    }
+
+    public void setFatherEmail(String fatherEmail) {
+        this.fatherEmail = fatherEmail;
     }
 }
